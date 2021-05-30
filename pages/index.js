@@ -15,7 +15,7 @@ export default function Home() {
       </div>
       <div className="py-5 space-y-8">
         <h2 className="text-3xl">My Apps</h2>
-        <AppPreview appName="Neptune" />
+        <AppPreview appName="Neptune" description="Neptune is a smooth and beautiful Twitter app built just for you. No more ads or non-chronological home feed. See what YOU expect to see. It's time to take control of your timeline." />
       </div>
     </div>
   )
