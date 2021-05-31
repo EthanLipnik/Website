@@ -2,7 +2,7 @@ module.exports = {
   purge: {
     content: ['./pages/**/*.js', './components/**/*.js'],
     options: {
-      safelist: ['from-neptune-primary', 'to-neptune-secondary', 'from-syndromi-primary', 'to-syndromi-secondary', 'from-kairos-primary', 'to-kairos-secondary', 'shadow-neptune', 'shadow-syndromi', 'shadow-kairs'],
+      safelist: ['from-neptune-primary', 'to-neptune-secondary', 'from-syndromi-primary', 'to-syndromi-secondary', 'from-kairos-primary', 'to-kairos-secondary', 'from-kano-primary', 'to-kano-secondary', 'from-sakka-primary', 'to-sakka-secondary', 'shadow-neptune', 'shadow-syndromi', 'shadow-kairos', 'shadow-kano', 'shadow-sakka'],
       blocklist: [/^debug-/],
       keyframes: true,
       fontFace: true,
