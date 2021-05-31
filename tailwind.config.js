@@ -21,7 +21,11 @@ module.exports = {
       'syndromi-primary': '#FFC04C',
       'syndromi-secondary': '#FF9502',
       'kairos-primary': '#1ACDD8',
-      'kairos-secondary': '#0054FF'
+      'kairos-secondary': '#0054FF',
+      'kano-primary': '#3991FF',
+      'kano-secondary': '#0048BE',
+      'sakka-primary': '#724569',
+      'sakka-secondary': '#30389B'
     }),
     borderRadius: {
       DEFAULT: '30px',
@@ -31,7 +35,9 @@ module.exports = {
       DEFAULT: '0px 8px 30px rgba(0, 0, 0, 0.25)',
       neptune: '0px 4px 30px rgba(0, 81, 158, 0.5)',
       syndromi: '0px 4px 30px rgba(164, 96, 0, 0.5)',
-      kairos: '0px 4px 30px rgba(3, 59, 160, 0.5)'
+      kairos: '0px 4px 30px rgba(3, 59, 160, 0.5)',
+      kano: '0px 4px 30px rgba(3, 59, 160, 0.5)',
+      sakka: '0px 4px 30px rgba(3, 59, 160, 0.5)'
     },
     height: {
       xl: '300px',
