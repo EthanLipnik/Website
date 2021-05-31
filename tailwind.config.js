@@ -1,5 +1,13 @@
 module.exports = {
-  purge: ['./pages/**/*.js', './components/**/*.js'],
+  purge: {
+    content: ['./pages/**/*.js', './components/**/*.js'],
+    options: {
+      safelist: ['from-neptune-primary', 'to-neptune-secondary', 'from-syndromi-primary', 'to-syndromi-secondary', 'from-kairos-primary', 'to-kairos-secondary', 'shadow-neptune', 'shadow-syndromi', 'shadow-kairs'],
+      blocklist: [/^debug-/],
+      keyframes: true,
+      fontFace: true,
+    },
+  },
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
@@ -20,7 +28,10 @@ module.exports = {
       xl: '60px'
     },
     boxShadow: {
-      DEFAULT: '0px 8px 30px rgba(0, 0, 0, 0.25)'
+      DEFAULT: '0px 8px 30px rgba(0, 0, 0, 0.25)',
+      neptune: '0px 4px 30px rgba(0, 81, 158, 0.5)',
+      syndromi: '0px 4px 30px rgba(164, 96, 0, 0.5)',
+      kairos: '0px 4px 30px rgba(3, 59, 160, 0.5)'
     },
     height: {
       xl: '300px',
