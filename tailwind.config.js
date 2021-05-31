@@ -37,7 +37,7 @@ module.exports = {
       syndromi: '0px 4px 30px rgba(164, 96, 0, 0.5)',
       kairos: '0px 4px 30px rgba(3, 59, 160, 0.5)',
       kano: '0px 4px 30px rgba(3, 59, 160, 0.5)',
-      sakka: '0px 4px 30px rgba(3, 59, 160, 0.5)'
+      sakka: '0px 4px 30px rgba(51, 56, 148, 0.5)'
     },
     height: {
       xl: '300px',
