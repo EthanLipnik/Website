@@ -30,7 +30,7 @@ export default function Home() {
         </div>
         <div className="space-y-8">
           <h2 className="text-3xl">In Development</h2>
-          <div className="flex">
+          <div className="lg:flex">
             <AppCard appName="Kano" imageURL={imageURL('v1622405113/Kano.png')} gradient={['kano-primary', 'kano-secondary']} />
             <AppCard appName="Sakka" imageURL={imageURL('v1622405112/Sakka.png')} gradient={['sakka-primary', 'sakka-secondary']} reversedRotation={true} />
           </div>
