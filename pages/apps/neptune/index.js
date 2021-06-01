@@ -1,4 +1,5 @@
 import * as React from 'react'
+import Head from 'next/head'
 
 export default class NeptunePage extends React.Component {
     render() {
