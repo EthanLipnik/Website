@@ -15,7 +15,7 @@ export default class AppPreview extends React.Component {
 
     render() {
         return (
-            <Link href={"/apps/" + this.state.appName.toLowerCase()}>
+            <Link href={"/apps/" + (this.state.appName ? this.state.appName.toLowerCase() : '')}>
                 <div className="cursor-pointer w-full bg-gray-200 dark:bg-gray-600 flex justify-center items-center rounded">
                     <div className={`cursor-pointer bg-gradient-to-b from-${(this.state.gradient ? this.state.gradient[0] : 'bg-blue-300')} to-${(this.state.gradient ? this.state.gradient[1] : 'bg-blue-500')} w-full flex relative z-0 transform transition-transform duration-500 ease-in-out ${this.state.reversedRotation ? "rotate-2 hover:-rotate-1" : "-rotate-2 hover:rotate-1"} rounded shadow${this.state.appName ? '-' + this.state.appName.toLowerCase() : ''} p-8`}>
                         <div className={`lg:flex w-full transform transition-transform ${this.state.reversedRotation ? "-rotate-2" : "rotate-2"}`}>
