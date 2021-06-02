@@ -2,6 +2,10 @@ import * as React from 'react'
 import Head from 'next/head'
 
 export default class NeptunePage extends React.Component {
+    imageURL = (path) => {
+        return "https://res.cloudinary.com/dz3gbu49x/image/upload/" + path
+    }
+
     render() {
         return (
             <div className="container mx-auto md:px-40 px-5 py-10">
@@ -28,6 +32,13 @@ export default class NeptunePage extends React.Component {
                     <meta property="og:url" content="https://ethanlipnik.com" />
                     <meta property="og:image" content="https://ethanlipnik.com/android-chrome-512x512.png" />
                 </Head>
+                <div className="space-y-16">
+                    <img src={this.imageURL('v1622404904/Neptune.png')} width={330} height={330} className="rounded-xl shadow-neptune mx-auto" />
+                    <div className="space-y-4">
+                        <h1 className="text-5xl text-center font-bold">Neptune</h1>
+                        <h2 className="text-3xl text-center">Out of this world</h2>
+                    </div>
+                </div>
             </div>
         )
     }
