@@ -41,7 +41,8 @@ module.exports = {
     },
     height: {
       xl: '300px',
-      app: '200px'
+      app: '200px',
+      detail: '310px'
     }
   },
   variants: {
