@@ -30,13 +30,13 @@ export default class NeptunePage extends React.Component {
                     <meta name="twitter:site" content="@EthanLipnik" />
                     <meta name="twitter:creator" content="@EthanLipnik" />
 
-                    <meta property="og:url" content="https://ethanlipnik.com" />
-                    <meta property="og:image" content="https://ethanlipnik.com/android-chrome-512x512.png" />
+                    <meta property="og:url" content="https://ethanlipnik.com/apps/neptune" />
+                    <meta property="og:image" content="https://ethanlipnik.com/apps/neptune/android-chrome-512x512.png" />
                 </Head>
                 <AppView
                     title="Neptune"
                     subtitle="Out of this World"
-                    icon="v1622404904/Neptune.png"
+                    icon="v1622675445/Neptune_hd.png"
                     link="https://apps.apple.com/us/app/neptune-for-twitter/id1506841953"
                     details={[
                         {

@@ -11,6 +11,7 @@ export default class AppView extends React.Component {
             icon: props.icon,
             link: props.link,
             details: props.details,
+            isBeta: props.isBeta ?? false
         }
     }
 
@@ -29,7 +30,7 @@ export default class AppView extends React.Component {
                     </div>
                     <a href={this.state.link ? this.state.link : "/failedToGetLink"} target={this.state.link ? "_blank" : null}>
                         <div className={`mx-auto bg-gradient-to-b from-${this.state.title ? this.state.title.toLowerCase() : "neptune"}-primary to-${this.state.title ? this.state.title.toLowerCase() : "neptune"}-secondary shadow${this.state.title ? "-" + this.state.title.toLowerCase() : ""} rounded md:w-1/2 lg:w-1/4 w-full py-4 transform transition-transform duration-500 ease-in-out scale-100 hover:scale-90`}>
-                            <h1 className="text-center text-4xl font-bold text-white">Get now</h1>
+                            <h1 className="text-center text-4xl font-bold text-white">{this.state.isBeta ? "Join the beta" : "Get now"}</h1>
                         </div>
                     </a>
                 </div>
