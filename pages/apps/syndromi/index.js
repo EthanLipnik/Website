@@ -36,7 +36,7 @@ export default class SyndromiPage extends React.Component {
                 <AppView
                     title="Syndromi"
                     subtitle="Third party YouTube Client"
-                    icon="v1622405112/Syndromi.png"
+                    icon="v1622675446/Syndromi_hd.png"
                     link="https://apps.apple.com/us/app/syndromi/id1547850133"
                     details={[
                         {
