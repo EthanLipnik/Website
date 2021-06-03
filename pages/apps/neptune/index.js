@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Head from 'next/head'
 import AppView from '../../AppView'
+import Link from 'next/link'
 
 export default class NeptunePage extends React.Component {
     imageURL = (path) => {
@@ -33,6 +34,9 @@ export default class NeptunePage extends React.Component {
                     <meta property="og:url" content="https://ethanlipnik.com/apps/neptune" />
                     <meta property="og:image" content="https://ethanlipnik.com/apps/neptune/android-chrome-512x512.png" />
                 </Head>
+                <Link href={"/apps/neptune/privacy"}>
+                    <h1>Privacy</h1>
+                </Link>
                 <AppView
                     title="Neptune"
                     subtitle="Out of this World"

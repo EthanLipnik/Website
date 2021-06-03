@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Head from 'next/head'
 import AppView from '../../AppView'
+import Link from 'next/link'
 
 export default class SyndromiPage extends React.Component {
     imageURL = (path) => {
@@ -33,6 +34,9 @@ export default class SyndromiPage extends React.Component {
                     <meta property="og:url" content="https://ethanlipnik.com/apps/kairos" />
                     <meta property="og:image" content="https://ethanlipnik.com/apps/kairos/android-chrome-512x512.png" />
                 </Head>
+                <Link href={"/apps/kairos/privacy"}>
+                    <h1>Privacy</h1>
+                </Link>
                 <AppView
                     title="Kairos"
                     subtitle="Beautiful weather at a glance"
