@@ -42,7 +42,7 @@ export default class AppView extends React.Component {
     }
 }
 
-function AppPopover() {
+export function AppPopover() {
     return (
         <Menu as="div" className="relative inline-block text-left rounded shadow">
             {({ open }) => (
