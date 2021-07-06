@@ -21,7 +21,7 @@ class DetailView extends React.Component {
         return (
             <div className="w-full space-y-2">
                 <h1 className="w-full text-3xl font-bold">{this.props.component.title}</h1>
-                <ul class="list-disc mx-10">
+                <ul className="list-disc mx-10">
                     {this.props.component.details.map((detail, index) => {
                         return <li key={index}>{detail}</li>
                     })}

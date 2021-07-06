@@ -44,7 +44,7 @@ export default class AppView extends React.Component {
 
 export function AppPopover() {
     return (
-        <Menu as="div" className="relative inline-block text-left rounded shadow">
+        <Menu as="div" className="w-24 mx-auto mb-10">
             {({ open }) => (
                 <>
                     <div>
@@ -66,7 +66,7 @@ export function AppPopover() {
                     >
                         <Menu.Items
                             static
-                            className="origin-top-right absolute right-0 mt-2 w-56 rounded shadow bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none"
+                            className="origin-top-right -mx-12 mt-2 w-56 rounded shadow bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none"
                         >
                             <div className="py-1">
                                 <Menu.Item>
