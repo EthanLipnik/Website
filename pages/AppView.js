@@ -3,6 +3,7 @@ import DetailView from './Views/DetailView'
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
+import Link from 'next/link'
 
 export default class AppView extends React.Component {
     imageURL = (path) => {
@@ -11,11 +12,11 @@ export default class AppView extends React.Component {
 
     render() {
         return (
-            <div className="container mx-auto md:px-40 px-5 py-10 space-y-20">
+            <div className="container mx-auto md:px-40 px-5 py-10">
                 <AppPopover />
-                <div className="space-y-16">
+                <div>
                     <img src={this.imageURL(this.props.icon ? this.props.icon : "")} width={330} height={330} className={`rounded-app shadow${this.props.title ? "-" + this.props.title.toLowerCase() : ""} mx-auto`} />
-                    <div className="space-y-4 p-8">
+                    <div className="p-8">
                         {this.props.title ? <h1 className="text-5xl text-center font-bold">{this.props.title}</h1> : null}
                         {this.props.subtitle ? <h2 className="text-3xl text-center">{this.props.subtitle}</h2> : null}
                     </div>
@@ -25,7 +26,7 @@ export default class AppView extends React.Component {
                         </div>
                     </a>
                 </div>
-                {this.props.details ? <div className="space-y-10">
+                {this.props.details ? <div className="space-y-10 pt-20">
                     <DetailView title={this.props.details[0].title} text={this.props.details[0].text} appTitle={this.props.title} gradient={this.props.title ? [this.props.title.toLowerCase() + "-primary", this.props.title.toLowerCase() + "-secondary"] : []} />
                     <div className="flex">
                         <div className="lg:w-1/2" />
@@ -33,6 +34,21 @@ export default class AppView extends React.Component {
                     </div>
                     <DetailView title={this.props.details[2].title} text={this.props.details[2].text} appTitle={this.props.title} gradient={this.props.title ? [this.props.title.toLowerCase() + "-primary", this.props.title.toLowerCase() + "-secondary"] : []} />
                 </div> : null}
+                <Link href={"/apps/" + (this.props.title ? this.props.title.toLowerCase() : '') + "/privacy"}>
+                    <div className="cursor-pointer w-full bg-gray-200 dark:bg-gray-600 flex justify-center items-center rounded">
+                        <div className={`cursor-pointer bg-gradient-to-b from-${(this.props.gradient ? this.props.gradient[0] : 'bg-blue-300')} to-${(this.props.gradient ? this.props.gradient[1] : 'bg-blue-500')} w-full flex relative z-0 transform transition-transform duration-500 ease-in-out ${this.props.reversedRotation ? "rotate-2 hover:-rotate-1" : "-rotate-2 hover:rotate-1"} rounded shadow${this.props.appName ? '-' + this.props.appName.toLowerCase() : ''} p-8`}>
+                            <div className={`lg:flex w-full transform transition-transform ${this.props.reversedRotation ? "-rotate-2" : "rotate-2"}`}>
+                                <div className="bg-white dark:bg-gray-700 bg-opacity-70 md:bg-opacity-100 rounded shadow w-auto lg:w-1/3 h-full p-4 z-10 my-auto">
+                                    <img src={this.props.imageURL} alt={this.props.appName} width={140} height={140} className={`mx-auto rounded shadow${this.props.appName ? '-' + this.props.appName.toLowerCase() : ''} m-5`} />
+                                    <h3 className="text-center text-3xl font-bold select-none">{this.props.appName}</h3>
+                                </div>
+                                <div className="bg-white dark:bg-gray-700 bg-opacity-70 rounded shadow w-full lg:w-7/12 h-full z-0 ml-auto hidden md:block">
+                                    <p className="text-center text-2xl m-8 p-4 select-none">{this.props.description}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Link>
             </div>
         )
     }
@@ -40,13 +56,13 @@ export default class AppView extends React.Component {
 
 function AppPopover() {
     return (
-        <Menu as="div" className="relative inline-block text-left shadow">
+        <Menu as="div" className="relative inline-block text-left rounded shadow">
             {({ open }) => (
                 <>
                     <div>
-                        <Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
+                        <Menu.Button className="inline-flex justify-center w-full rounded border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
                             Apps
-              <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
+                            <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
                         </Menu.Button>
                     </div>
 
@@ -62,13 +78,28 @@ function AppPopover() {
                     >
                         <Menu.Items
                             static
-                            className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none"
+                            className="origin-top-right absolute right-0 mt-2 w-56 rounded shadow bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none"
                         >
                             <div className="py-1">
                                 <Menu.Item>
                                     {({ active }) => (
                                         <a
-                                            href="#"
+                                            href="/"
+                                            className={classNames(
+                                                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                                'block px-4 py-2 text-sm'
+                                            )}
+                                        >
+                                            Home
+                                        </a>
+                                    )}
+                                </Menu.Item>
+                            </div>
+                            <div className="py-1">
+                                <Menu.Item>
+                                    {({ active }) => (
+                                        <a
+                                            href="/apps/neptune"
                                             className={classNames(
                                                 active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                                 'block px-4 py-2 text-sm'
@@ -81,7 +112,7 @@ function AppPopover() {
                                 <Menu.Item>
                                     {({ active }) => (
                                         <a
-                                            href="#"
+                                            href="/apps/syndromi"
                                             className={classNames(
                                                 active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                                 'block px-4 py-2 text-sm'
@@ -94,7 +125,7 @@ function AppPopover() {
                                 <Menu.Item>
                                     {({ active }) => (
                                         <a
-                                            href="#"
+                                            href="/apps/kairos"
                                             className={classNames(
                                                 active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                                 'block px-4 py-2 text-sm'
@@ -109,7 +140,7 @@ function AppPopover() {
                                 <Menu.Item>
                                     {({ active }) => (
                                         <a
-                                            href="#"
+                                            href="https://sakka.app"
                                             className={classNames(
                                                 active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                                 'block px-4 py-2 text-sm'
@@ -122,7 +153,7 @@ function AppPopover() {
                                 <Menu.Item>
                                     {({ active }) => (
                                         <a
-                                            href="#"
+                                            href="https://kano.today"
                                             className={classNames(
                                                 active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                                 'block px-4 py-2 text-sm'
